@@ -32,6 +32,8 @@ const Hero = ({
   ...props
 }) => {
 
+  const [sign, setSign] = useState("");
+
 
   const { library,
     chainId,
@@ -83,6 +85,7 @@ const Hero = ({
     e.preventDefault();
     deactivate();
     setProvider("");
+    setSign("");
   }
 
   const switchNetwork = async () => {
@@ -106,7 +109,7 @@ const Hero = ({
         params: [message, account]
       });
       console.log(message);
-      console.log(signature);
+      setSign(signature);
     } catch (error) {
       console.log(error);
     }
@@ -144,6 +147,7 @@ const Hero = ({
                 </p>
               <div className="reveal-from-bottom" data-reveal-delay="600">
                 <p>{`Your Wallet address : ${truncateAddress(account)}`}</p>
+                {sign ? <p>Signed Successfully!</p> : ""}
                 <ButtonGroup>
                   {!active ? (<>
                     <Button tag="a" color="primary" wideMobile variant="outline"
