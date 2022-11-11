@@ -154,18 +154,18 @@ const Hero = ({
                     onClick={connectArgent}
                     w="100%"
                     >
-                    Argent
+                    Connect To Argent
                     </Button>
                     <Button tag="a" color="primary" wideMobile variant="outline"
                     onClick={connectMetamask}
                     w="100%"
                     >
-                    Metamask</Button></>
+                    Connect To Metamask</Button></>
                   )
                    :  <Button tag="a" color="primary" wideMobile variant="outline"
                   onClick={disconnectWallet}
                   w="100%">
-                        Disconnect
+                        Disconnect Wallet
                         </Button> }
 
                   {!active ? (
